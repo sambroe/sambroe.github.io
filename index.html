@@ -30,27 +30,5 @@
     <!-- <script src="assets/js/jquery.textillate.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- <script src="js/bootstrap.min.js"></script> -->
-
-    <script type="text/javascript">
-      $(function ()
-      {
-        var $logo = $('#logo');
-        var logoImg = $logo[0];
-        var logoSrc = logoImg.src;
-
-        logoImg.src = null;
-
-        logoImg.onload = function ()
-        {
-          $(this).closest('#bg-container').animate(
-          {
-            opacity: 1
-          },
-          7000);
-        }
-
-        logoImg.src = logoSrc;
-      });
-    </script>
   </body>
 </html>
