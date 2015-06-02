@@ -30,5 +30,71 @@
     <!-- <script src="assets/js/jquery.textillate.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- <script src="js/bootstrap.min.js"></script> -->
+
+    <script type="text/javascript">
+
+      $(function ()
+      {
+        var $bgImg = $('<img>');
+        var bgImg = $bgImg[0];
+        var $bgContainer = $('#bg-container');
+        var $window = $(window);
+
+        bgImg.onload = function ()
+        {
+          $bgContainer.fadeIn(5000);
+          $window.resize();
+        }
+        bgImg.src = 'assets/img/bg.jpg';
+
+        $bgContainer.append($bgImg);
+
+        $window.resize(function ()
+        {
+          var w, h, x, y, windowWidth = $window.width(), windowHeight = $window.height();
+          var wH = windowWidth / windowHeight;
+          var hW = windowHeight / windowWidth;
+          var imageAspectRatio = $bgImg.width()/$bgImg.height();
+          var imageAspectRatioInverse = $bgImg.height()/$bgImg.width();
+
+          if (wH > imageAspectRatio)
+          {
+            w = windowWidth;
+            h = windowWidth * imageAspectRatioInverse;
+            x = (windowWidth - w) / 2;
+            y = (windowHeight - h) / 2;
+          }
+          else
+          {
+            h = windowHeight;
+            w = windowHeight * imageAspectRatio;
+            x = (windowWidth - w) / 2;
+            y = (windowHeight - h) / 2;
+          }
+
+          $bgImg.css({
+            width: w + 'px',
+            height: h + 'px',
+            top: y + 'px',
+            left: x + 'px'
+          });
+
+          var skyRatio = 780/2340;
+          var skyHeight = skyRatio*h;
+          var visibleSky = skyHeight + y;
+          var nameHeight = Math.max(visibleSky, 100);
+          var $name = $('#name');
+
+          $name.css(
+          {
+            height: nameHeight + 'px',
+            lineHeight: nameHeight + 'px',
+            fontSize: (nameHeight*.18) + 'px'
+          });
+
+        });
+      });
+
+    </script>
   </body>
 </html>
