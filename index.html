@@ -82,15 +82,24 @@
           var skyRatio = 780/2340;
           var skyHeight = skyRatio*h;
           var visibleSky = skyHeight + y;
-          var nameHeight = Math.floor(Math.max(Math.min(visibleSky, 130), 100));
+          var nameHeight = Math.max(visibleSky, 100);
           var $name = $('#name');
+          var $nameImg = $name.find('img');
 
           $name.css(
           {
             height: nameHeight + 'px',
             lineHeight: nameHeight + 'px',
-            fontSize: (nameHeight*.25) + 'px'
-          });
+          })
+
+          _.defer(_.bind(function ()
+          {
+            $name.css(
+            {
+              fontSize: ($nameImg.height()*.40) + 'px'
+            });
+          },
+          this));
 
         });
       });

@@ -33,7 +33,7 @@ h1#name {
 
 h1#name img {
   height: 70%;
-  /*margin: 0 5px;*/
+  max-height: 90px;
   vertical-align: middle;
 }
 
