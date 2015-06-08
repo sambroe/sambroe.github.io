@@ -82,7 +82,7 @@
           var skyRatio = 780/2340;
           var skyHeight = skyRatio*h;
           var visibleSky = skyHeight + y;
-          var nameHeight = Math.max(visibleSky, 100);
+          var nameHeight = Math.floor(Math.max(Math.min(visibleSky, 130), 100));
           var $name = $('#name');
 
           $name.css(
