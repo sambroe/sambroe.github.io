@@ -25,11 +25,9 @@
   <body>
     <div id="bg-container"></div>
     <h1 id="name" data-in-effect="rollIn">Sam <img src="assets/img/logo.png" alt="" id="logo"/> Broe</h1>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- <script src="assets/js/jquery.textillate.js"></script> -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="assets/js/underscore.min.js"></script>
 
     <script type="text/javascript">
 
@@ -101,7 +99,8 @@
           },
           this));
 
-        });
+        })
+        .resize();
       });
 
     </script>
