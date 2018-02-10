@@ -6505,7 +6505,7 @@ a.text-dark:hover, a.text-dark:focus {
 main .scene-1 {
   width: 100vw;
   height: 100vh;
-  background: red;
+  background: green;
   position: relative; }
   main .scene-1 .background {
     width: 100vw;
