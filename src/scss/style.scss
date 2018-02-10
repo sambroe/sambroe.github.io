@@ -1,2 +1,25 @@
 @import 'modules/_vars.scss';
 @import 'vendor/_external.scss';
+
+main {
+  .scene-1 {
+    width: 100vw;
+    height: 100vh;
+    background: red;
+    position: relative;
+
+    .background {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: white url('../img/bg-blurry.jpg') no-repeat center center;
+      background-size: cover;
+    }
+  }
+
+  .scene-2 {
+
+  }
+}
