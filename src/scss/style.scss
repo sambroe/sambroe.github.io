@@ -1,25 +1,70 @@
 @import 'modules/_vars.scss';
 @import 'vendor/_external.scss';
 
-main {
-  .scene-1 {
+.vh {
+  height: 100vh;
+}
+
+.scenes {
+  .scene {
     width: 100vw;
     height: 100vh;
-    background: green;
     position: relative;
+    overflow: hidden;
 
-    .background {
-      width: 100vw;
-      height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: white url('../img/bg-blurry.jpg') no-repeat center center;
+    &.scene-1 {
+      background: transparent url('../img/paint.jpg') no-repeat center center;
       background-size: cover;
+
+      .logo-container {
+        #logo {
+          fill: white;
+        }
+      }
+
+      .paint-container {
+        width: 200vw;
+        height: 200vh;
+        position: absolute;
+        top: -50vh;
+        left: -50vw;
+
+        .paint {
+          width: 100vw;
+          height: 100vh;
+          position: absolute;
+          background: transparent url('../img/paint.jpg') no-repeat center center;
+          background-size: cover;
+
+          &.tl {
+            top: 0;
+            left: 0;
+            background-position: top right;
+            transform: scaleY(-1);
+          }
+
+          &.tr {
+            top: 0;
+            right: 0;
+            background-position: top right;
+            transform: scaleX(-1) scaleY(-1);
+          }
+
+          &.bl {
+            bottom: 0;
+            left: 0;
+            background-position: top right;
+          }
+
+          &.br {
+            bottom: 0;
+            right: 0;
+            background-position: top right;
+            transform: scaleX(-1);
+            // transform: scaleY(-1);
+          }
+        }
+      }
     }
-  }
-
-  .scene-2 {
-
   }
 }
