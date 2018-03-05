@@ -6513,16 +6513,23 @@ a.text-dark:hover, a.text-dark:focus {
   .scenes .scene.scene-1 {
     background: transparent url("../img/paint.jpg") no-repeat center center;
     background-size: cover; }
-    .scenes .scene.scene-1 .logo-container #logo {
-      fill: white; }
+    .scenes .scene.scene-1 #logo {
+      fill: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -50vw;
+      margin-left: -50vw;
+      width: 100vw;
+      height: 100vw; }
     .scenes .scene.scene-1 .paint-container {
+      display: none;
       width: 200vw;
       height: 200vh;
       position: absolute;
       top: -50vh;
       left: -50vw;
-      -webkit-mask: url(#logo);
-              mask: url(#logo); }
+      z-index: 1; }
       .scenes .scene.scene-1 .paint-container .paint {
         width: 100vw;
         height: 100vh;
